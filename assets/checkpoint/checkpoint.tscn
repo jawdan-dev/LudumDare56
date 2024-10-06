@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjfc43cl10fic"]
+
+[ext_resource type="Script" path="res://assets/checkpoint/checkpoint.gd" id="1_tkj7e"]
+[ext_resource type="Texture2D" uid="uid://bkqjmb1j24qd" path="res://assets/checkpoint/checkpoint.png" id="2_hb3s4"]
+
+[node name="Checkpoint" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_tkj7e")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.242908, 0)
+pixel_size = 0.03
+texture_filter = 0
+texture = ExtResource("2_hb3s4")
