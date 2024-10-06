@@ -1,0 +1,232 @@
+[gd_scene load_steps=8 format=3 uid="uid://r402vijoeba7"]
+
+[ext_resource type="PackedScene" uid="uid://c0xo5t5cf2ai" path="res://assets/player/player.tscn" id="1_qyo8s"]
+[ext_resource type="Texture2D" uid="uid://pghykqquhejb" path="res://assets/tracks/track.png" id="1_xjyhb"]
+[ext_resource type="Texture2D" uid="uid://cmpmi64kf0d6q" path="res://assets/tracks/trees.png" id="2_hp1p2"]
+[ext_resource type="Script" path="res://assets/tracks/tree.gd" id="3_2s0e2"]
+[ext_resource type="Texture2D" uid="uid://fv8ahqbj7hny" path="res://assets/player/player.png" id="5_qj4at"]
+[ext_resource type="Script" path="res://assets/player/racerTurn.gd" id="6_dm2pm"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l3c5k"]
+
+[node name="GrayBox" type="Node3D"]
+
+[node name="GroundPlane" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPlane"]
+shape = SubResource("WorldBoundaryShape3D_l3c5k")
+
+[node name="Ground" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+pixel_size = 0.1
+transparent = false
+texture_filter = 0
+texture = ExtResource("1_xjyhb")
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Tree" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.328891, -7.07267)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree2" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.762948, 0.328891, -8.053)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree3" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.762948, 0.328891, -4.33437)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree4" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.985738, 0.328891, -4.33437)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree9" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04677, 0.328891, -3.68693)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree5" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898085, 0.331152, -3.58622)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree6" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101915, 0.331152, -2.58622)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree7" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05705, 0.331152, -1.98572)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree8" type="Sprite3D" parent="Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12551, 0.331151, -3.74535)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree10" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -3.47475, 0.474048, 0.818628)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree11" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -2.53497, 0.331152, 1.49613)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree12" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -2.19062, 0.331152, 2.86778)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree13" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -3.49345, 0.331152, 2.78771)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree14" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -0.716982, 0.331152, 2.39901)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree15" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -4.90719, 0.474048, 9.3634)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree16" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -3.96741, 0.331152, 10.0409)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree17" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -3.62305, 0.331152, 11.4126)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree18" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -4.92589, 0.331152, 11.3325)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree19" type="Sprite3D" parent="Trees"]
+transform = Transform3D(0.858002, 0, -0.513646, 0, 1, 0, 0.513646, 0, 0.858002, -2.14942, 0.331152, 10.9438)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree20" type="Sprite3D" parent="Trees"]
+transform = Transform3D(-0.839079, 0, 0.544009, 0, 1, 0, -0.544009, 0, -0.839079, -4.85384, 0.474048, 11.8883)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree21" type="Sprite3D" parent="Trees"]
+transform = Transform3D(-0.839079, 0, 0.544009, 0, 1, 0, -0.544009, 0, -0.839079, -5.76879, 0.331152, 11.1776)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree22" type="Sprite3D" parent="Trees"]
+transform = Transform3D(-0.839079, 0, 0.544009, 0, 1, 0, -0.544009, 0, -0.839079, -6.06386, 0.331152, 9.79455)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree23" type="Sprite3D" parent="Trees"]
+transform = Transform3D(-0.839079, 0, 0.544009, 0, 1, 0, -0.544009, 0, -0.839079, -4.76472, 0.331152, 9.92117)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Tree24" type="Sprite3D" parent="Trees"]
+transform = Transform3D(-0.839079, 0, 0.544009, 0, 1, 0, -0.544009, 0, -0.839079, -7.55332, 0.331152, 10.2103)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_hp1p2")
+hframes = 2
+script = ExtResource("3_2s0e2")
+
+[node name="Player" parent="." node_paths=PackedStringArray("trackSprite") instance=ExtResource("1_qyo8s")]
+trackSprite = NodePath("../Ground")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.323899, 0.751837)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41546, 0.15046, -1.87118)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("5_qj4at")
+hframes = 5
+script = ExtResource("6_dm2pm")

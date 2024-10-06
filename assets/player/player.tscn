@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0xo5t5cf2ai"]
+
+[ext_resource type="Texture2D" uid="uid://fv8ahqbj7hny" path="res://assets/player/player.png" id="1_7grdt"]
+[ext_resource type="Script" path="res://assets/player/player.gd" id="1_26kp3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ik3og"]
+radius = 0.165109
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_26kp3")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15046, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_7grdt")
+hframes = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.177508, 0)
+shape = SubResource("SphereShape3D_ik3og")
