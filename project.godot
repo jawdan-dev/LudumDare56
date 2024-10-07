@@ -13,7 +13,13 @@ config_version=5
 config/name="LudumDare56"
 run/main_scene="res://scenes/grayBox.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/tracks/track.png"
+
+[importer_defaults]
+
+texture={
+"detect_3d/compress_to": 0
+}
 
 [input]
 
