@@ -26,6 +26,8 @@ func _physics_process(delta):
 	#
 	handleMoveAndSlide();
 	
+	$Engine.pitch_scale = 1 + abs(currentVelocity)/10
+	
 ###################################################################################
 
 func handleAcceleration(delta):
