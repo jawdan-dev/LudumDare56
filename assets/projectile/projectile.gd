@@ -33,6 +33,6 @@ func onBodyHit(body):
 	var kart : Kart = body as Kart;
 	if (!kart): return;
 	
-	if (kart == target):
+	if (kart == target || !is_instance_valid(target)):
 		lifeTime = 0;
 		kart.takeDamage(damage);
