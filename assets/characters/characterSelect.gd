@@ -8,7 +8,17 @@ func _ready():
 func onSelect(index : int):
 	CharacterChoice.playerChoice = index;
 	$Button.disabled = false;
-	# TODO: Player sounds here.	
+	#sounds 
+	match index:
+		0: $Announcer1.play()
+		1: $Announcer2.play()
+		2: $Announcer3.play()
+		3: $Announcer4.play()
+		4: $Announcer5.play()
+		5: $Announcer6.play()
+		6: $Announcer7.play()
+		7: $Announcer8.play()
+		8: $Announcer9.play()
 	
 	
 func onStart():

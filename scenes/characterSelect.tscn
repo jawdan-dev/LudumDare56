@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ci0n0x2n6hhae"]
+[gd_scene load_steps=21 format=3 uid="uid://ci0n0x2n6hhae"]
 
 [ext_resource type="Theme" uid="uid://cem70aixclxe2" path="res://assets/UI/Theme.tres" id="1_74djn"]
 [ext_resource type="Script" path="res://assets/characters/characterSelect.gd" id="2_alq64"]
@@ -11,6 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://0etq55w18ovw" path="res://assets/characters/icons/icon7.png" id="8_41we8"]
 [ext_resource type="Texture2D" uid="uid://cef42d8cruxcq" path="res://assets/characters/icons/icon8.png" id="9_flxbh"]
 [ext_resource type="Texture2D" uid="uid://bklyw7xffav0d" path="res://assets/characters/icons/icon9.png" id="10_4uu0o"]
+[ext_resource type="AudioStream" uid="uid://dj7i4pc6smqd5" path="res://assets/characters/audio/loafshark.wav" id="12_j50ba"]
+[ext_resource type="AudioStream" uid="uid://1tims056ybf3" path="res://assets/characters/audio/mrphrog.wav" id="13_gshke"]
+[ext_resource type="AudioStream" uid="uid://cyptpldee8v74" path="res://assets/characters/audio/kingkame.wav" id="14_anor5"]
+[ext_resource type="AudioStream" uid="uid://46af462uw1xv" path="res://assets/characters/audio/quintonquickjr.wav" id="15_bkyqk"]
+[ext_resource type="AudioStream" uid="uid://bwckq2ro8wabk" path="res://assets/characters/audio/bananawizard.wav" id="16_ippw8"]
+[ext_resource type="AudioStream" uid="uid://c4lc7xlqkac7o" path="res://assets/characters/audio/antenna.wav" id="17_yav3c"]
+[ext_resource type="AudioStream" uid="uid://cjwh30nsf27gh" path="res://assets/characters/audio/rockethead.wav" id="18_5ipwx"]
+[ext_resource type="AudioStream" uid="uid://72lh2pvslq1p" path="res://assets/characters/audio/soulcatguy.wav" id="19_vrdx5"]
+[ext_resource type="AudioStream" uid="uid://di1gkf8pnhc6" path="res://assets/characters/audio/kokonutmilk.wav" id="20_iavqj"]
 
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
@@ -135,6 +144,33 @@ RamenRonin
 HJMW"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Announcer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_j50ba")
+
+[node name="Announcer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_gshke")
+
+[node name="Announcer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_anor5")
+
+[node name="Announcer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_bkyqk")
+
+[node name="Announcer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_ippw8")
+
+[node name="Announcer6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_yav3c")
+
+[node name="Announcer7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_5ipwx")
+
+[node name="Announcer8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_vrdx5")
+
+[node name="Announcer9" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_iavqj")
 
 [connection signal="item_selected" from="ItemList" to="." method="onSelect"]
 [connection signal="pressed" from="Button" to="." method="onStart"]
