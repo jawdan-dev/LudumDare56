@@ -147,7 +147,7 @@ func getGroundType():
 func pickupItem() -> bool:
 	if (itemType != 0): return false;
 	
-	itemType = [2, 2].pick_random();
+	itemType = [1, 1, 2].pick_random();
 	return true;
 
 const projectilePrefab : PackedScene = preload("res://assets/projectile/projectile.tscn");

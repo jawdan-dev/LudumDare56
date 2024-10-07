@@ -18,7 +18,7 @@ func _physics_process(delta):
 		queue_free();
 		return;
 	
-	if (target):
+	if (is_instance_valid(target)):
 		var targetDirection : Vector3 = (target.global_position - global_position).normalized()
 		forward = forward.move_toward(targetDirection, rotationSpeed * speed * delta * TAU).normalized();
 	

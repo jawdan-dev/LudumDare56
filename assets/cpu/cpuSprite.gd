@@ -6,6 +6,8 @@ func _ready():
 	mainCamera = get_viewport().get_camera_3d();
 
 func _process(_delta):
+	if (!is_instance_valid(mainCamera)): return;
+	
 	var rotationTo : float = rad_to_deg(getAngleChange(global_rotation.y, mainCamera.global_rotation.y));
 	
 	var flipped : bool = false;
