@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://r402vijoeba7"]
+[gd_scene load_steps=9 format=3 uid="uid://r402vijoeba7"]
 
 [ext_resource type="PackedScene" uid="uid://cyt583hcsrcd6" path="res://assets/player/player.tscn" id="1_qyo8s"]
 [ext_resource type="Texture2D" uid="uid://pghykqquhejb" path="res://assets/tracks/track.png" id="1_xjyhb"]
@@ -11,8 +11,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_41vwm"]
 size = Vector3(1.91602, 1, 0.249512)
-
-[sub_resource type="SphereMesh" id="SphereMesh_xhbdt"]
 
 [node name="GrayBox" type="Node3D"]
 
@@ -316,79 +314,51 @@ hframes = 2
 script = ExtResource("3_2s0e2")
 
 [node name="Player" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("1_qyo8s")]
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
 [node name="Camera" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.305793, 0.606846)
-current = true
 
-[node name="CPU" parent="." node_paths=PackedStringArray("debugBlock", "checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
+[node name="CPU" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9805, 0, 0)
-debugBlock = NodePath("../DebugBlock")
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
-[node name="CPU2" parent="." node_paths=PackedStringArray("debugBlock", "checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
+[node name="CPU2" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35044, 0, 0)
-debugBlock = NodePath("../DebugBlock2")
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
-[node name="CPU3" parent="." node_paths=PackedStringArray("debugBlock", "checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
+[node name="CPU3" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80639, 0, 0)
-debugBlock = NodePath("../DebugBlock3")
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
-[node name="CPU4" parent="." node_paths=PackedStringArray("debugBlock", "checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
+[node name="CPU4" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35044, 0, 0.238796)
-debugBlock = NodePath("../DebugBlock4")
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
-[node name="CPU5" parent="." node_paths=PackedStringArray("debugBlock", "checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
+[node name="CPU5" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80639, 0, 0.238796)
-debugBlock = NodePath("../DebugBlock5")
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
-[node name="CPU6" parent="." node_paths=PackedStringArray("debugBlock", "checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
+[node name="CPU6" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35044, 0, 0.523198)
-debugBlock = NodePath("../DebugBlock6")
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
-[node name="CPU7" parent="." node_paths=PackedStringArray("debugBlock", "checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
+[node name="CPU7" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80639, 0, 0.523198)
-debugBlock = NodePath("../DebugBlock7")
+collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
-
-[node name="DebugBlock" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-mesh = SubResource("SphereMesh_xhbdt")
-
-[node name="DebugBlock2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.369945, 0, 0)
-mesh = SubResource("SphereMesh_xhbdt")
-
-[node name="DebugBlock3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.825886, 0, 0)
-mesh = SubResource("SphereMesh_xhbdt")
-
-[node name="DebugBlock4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.369945, 0, 0.238796)
-mesh = SubResource("SphereMesh_xhbdt")
-
-[node name="DebugBlock5" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.825886, 0, 0.238796)
-mesh = SubResource("SphereMesh_xhbdt")
-
-[node name="DebugBlock6" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.369945, 0, 0.523198)
-mesh = SubResource("SphereMesh_xhbdt")
-
-[node name="DebugBlock7" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.825886, 0, 0.523198)
-mesh = SubResource("SphereMesh_xhbdt")
