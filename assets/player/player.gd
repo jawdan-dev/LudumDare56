@@ -4,6 +4,9 @@ func getAccelerationInput(): return Input.get_axis("player_backward", "player_fo
 func getTurningInput(): return Input.get_axis("player_right", "player_left");
 func getUseItemInput(): return Input.is_action_just_pressed("player_item");
 
+func _ready():
+	$Sprite.texture = CharacterChoice.takePlayerSprite()
+
 func _process(_delta):
 	var turningInput : float = getTurningInput();
 	if (turningInput != 0):

@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://ci0n0x2n6hhae"]
+
+[ext_resource type="Theme" uid="uid://cem70aixclxe2" path="res://assets/UI/Theme.tres" id="1_74djn"]
+[ext_resource type="Script" path="res://assets/characters/characterSelect.gd" id="2_alq64"]
+[ext_resource type="Texture2D" uid="uid://ba38k1eoqepml" path="res://assets/characters/icons/icon1.png" id="2_d83vl"]
+[ext_resource type="Texture2D" uid="uid://b4g6ofohy2im4" path="res://assets/characters/icons/icon2.png" id="3_vguv3"]
+[ext_resource type="Texture2D" uid="uid://chu48ibvw80yj" path="res://assets/characters/icons/icon3.png" id="4_nhb8q"]
+[ext_resource type="Texture2D" uid="uid://82nmovk58bsj" path="res://assets/characters/icons/icon4.png" id="5_w2qh7"]
+[ext_resource type="Texture2D" uid="uid://dpj3cdr4urvfk" path="res://assets/characters/icons/icon5.png" id="6_4owau"]
+[ext_resource type="Texture2D" uid="uid://bephspbhw7l1a" path="res://assets/characters/icons/icon6.png" id="7_hxt0j"]
+[ext_resource type="Texture2D" uid="uid://0etq55w18ovw" path="res://assets/characters/icons/icon7.png" id="8_41we8"]
+[ext_resource type="Texture2D" uid="uid://cef42d8cruxcq" path="res://assets/characters/icons/icon8.png" id="9_flxbh"]
+[ext_resource type="Texture2D" uid="uid://bklyw7xffav0d" path="res://assets/characters/icons/icon9.png" id="10_4uu0o"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_74djn")
+script = ExtResource("2_alq64")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -200.0
+offset_right = 112.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_reselect = true
+item_count = 9
+max_columns = 3
+same_column_width = true
+icon_mode = 0
+icon_scale = 3.0
+item_0/icon = ExtResource("2_d83vl")
+item_1/icon = ExtResource("3_vguv3")
+item_2/icon = ExtResource("4_nhb8q")
+item_3/icon = ExtResource("5_w2qh7")
+item_4/icon = ExtResource("6_4owau")
+item_5/icon = ExtResource("7_hxt0j")
+item_6/icon = ExtResource("8_41we8")
+item_7/icon = ExtResource("9_flxbh")
+item_8/icon = ExtResource("10_4uu0o")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 460.0
+offset_right = 619.0
+offset_bottom = 540.0
+theme_override_font_sizes/font_size = 90
+disabled = true
+text = "Start
+"
+
+[connection signal="item_selected" from="ItemList" to="." method="onSelect"]
+[connection signal="pressed" from="Button" to="." method="onStart"]

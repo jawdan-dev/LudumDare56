@@ -2,7 +2,7 @@ extends Area3D
 
 func _ready():
 	body_entered.connect(bodyEntered);
-
+	
 func bodyEntered(body : Node3D):
 	var kart : Kart = body as Kart;
 	if (!kart): return;

@@ -6,6 +6,9 @@ func getUseItemInput(): return 1;
 var lastCheckpoint : int = 0;
 var targetPoint : Vector3 = Vector3.ZERO;
 
+func _ready():
+	$Sprite.texture = CharacterChoice.takeCPUSprite();
+
 func getTurningInput(): 
 	if (!checkpointParent): return 0;
 	

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="LudumDare56"
-run/main_scene="res://scenes/grayBox.tscn"
+run/main_scene="res://scenes/characterSelect.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/tracks/track.png"
+
+[autoload]
+
+CharacterChoice="*res://assets/characters/characterChoice.gd"
 
 [importer_defaults]
 
@@ -60,3 +64,4 @@ player_item={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.333333, 0.733333, 0.8, 1)
