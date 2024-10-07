@@ -156,7 +156,9 @@ func useItem():
 		1: 
 			var projectile : Node3D = projectilePrefab.instantiate();
 			
+			projectile.ignoreTarget = self;
 			projectile.damage = lightDamage;
+			projectile.speed = 10;
 			projectile.lifeTime = 0.5;
 			projectile.rotation.y = currentAngle;
 			
@@ -166,6 +168,7 @@ func useItem():
 			var projectile : Node3D = projectilePrefab.instantiate();
 			
 			projectile.target = getKartInFront();
+			projectile.ignoreTarget = self;
 			projectile.damage = heavyDamage;
 			projectile.rotation.x = TAU * 0.25;
 			

@@ -1,6 +1,7 @@
 extends Area3D
 
 @export var target : Kart;
+@export var ignoreTarget : Kart;
 @export var speed : float = 3.5;
 @export var rotationSpeed : float = 0.2;
 @export var damage : float = 1.0;
@@ -32,6 +33,7 @@ func _physics_process(delta):
 func onBodyHit(body):
 	var kart : Kart = body as Kart;
 	if (!kart): return;
+	if (kart == ignoreTarget): return;
 	
 	if (kart == target || !is_instance_valid(target)):
 		lifeTime = 0;
