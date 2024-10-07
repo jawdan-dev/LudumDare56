@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://doq372oriag6c"]
+[gd_scene load_steps=7 format=3 uid="uid://doq372oriag6c"]
 
 [ext_resource type="Script" path="res://assets/kart/kart.gd" id="1_2ex7j"]
+[ext_resource type="PackedScene" uid="uid://w1d37xtdvraw" path="res://assets/particle/particleEmitter.tscn" id="2_8s5px"]
+[ext_resource type="Texture2D" uid="uid://cnnk1n8uhkf37" path="res://assets/particle/textures/tireSmoke.png" id="3_imu6m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oikaq"]
 radius = 0.125
+
+[sub_resource type="Curve" id="Curve_guw6c"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_t8rxw"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
 
 [node name="Kart" type="CharacterBody3D"]
 script = ExtResource("1_2ex7j")
@@ -11,3 +22,43 @@ script = ExtResource("1_2ex7j")
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
 shape = SubResource("SphereShape3D_oikaq")
+
+[node name="TireSmoke_Left1" parent="." instance=ExtResource("2_8s5px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.03, 0.05)
+emissionsPerSecond = 10.0
+texture = ExtResource("3_imu6m")
+textureFrames = 6
+maxLifetime = 0.2
+velocity = Vector3(0, 0.1, 0)
+rotationCurve = SubResource("Curve_guw6c")
+scaleCurve = SubResource("Curve_t8rxw")
+
+[node name="TireSmoke_Left2" parent="." instance=ExtResource("2_8s5px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.03, 0.05)
+emissionsPerSecond = 10.0
+texture = ExtResource("3_imu6m")
+textureFrames = 6
+maxLifetime = 0.2
+velocity = Vector3(0, 0.1, 0)
+rotationCurve = SubResource("Curve_guw6c")
+scaleCurve = SubResource("Curve_t8rxw")
+
+[node name="TireSmoke_Right1" parent="." instance=ExtResource("2_8s5px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.03, 0.05)
+emissionsPerSecond = 10.0
+texture = ExtResource("3_imu6m")
+textureFrames = 6
+maxLifetime = 0.2
+velocity = Vector3(0, 0.1, 0)
+rotationCurve = SubResource("Curve_guw6c")
+scaleCurve = SubResource("Curve_t8rxw")
+
+[node name="TireSmoke_Right2" parent="." instance=ExtResource("2_8s5px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.03, 0.05)
+emissionsPerSecond = 10.0
+texture = ExtResource("3_imu6m")
+textureFrames = 6
+maxLifetime = 0.2
+velocity = Vector3(0, 0.1, 0)
+rotationCurve = SubResource("Curve_guw6c")
+scaleCurve = SubResource("Curve_t8rxw")

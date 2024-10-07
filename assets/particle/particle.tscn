@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq1itaywjf7y1"]
+
+[ext_resource type="Script" path="res://assets/particle/particle.gd" id="1_njeov"]
+
+[node name="Particle" type="Node3D"]
+script = ExtResource("1_njeov")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+billboard = 1
+double_sided = false
+texture_filter = 0

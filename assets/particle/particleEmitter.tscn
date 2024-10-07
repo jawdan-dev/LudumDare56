@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://w1d37xtdvraw"]
+
+[ext_resource type="Script" path="res://assets/particle/particleEmitter.gd" id="1_0o6ep"]
+
+[node name="ParticleEmitter" type="Node3D"]
+script = ExtResource("1_0o6ep")

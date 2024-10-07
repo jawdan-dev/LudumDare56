@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bkqjmb1j24qd" path="res://assets/checkpoint/checkpoint.png" id="2_hb3s4"]
 
 [node name="Checkpoint" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_tkj7e")
 
 [node name="Sprite" type="Sprite3D" parent="."]

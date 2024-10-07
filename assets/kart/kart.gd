@@ -14,14 +14,12 @@ var currentVelocity : float = 0.0;
 func getAccelerationInput(): return 0;
 func getTurningInput(): return 0;
 
-func _ready():
-	initializeCheckpoints();
-
 func _physics_process(delta): 
 	handleAcceleration(delta);
 	handleTurning(delta);
 	#
 	handleSprite();
+	handleParticles();
 	#
 	handleMoveAndSlide();
 	
@@ -63,6 +61,25 @@ func getAngleChange(a : float, b : float) -> float:
 func handleSprite():
 	rotation.y = currentAngle;
 	
+func handleParticles():
+	var particleAmount : float = absf(currentVelocity) * abs(currentTurning) * 10.0;	
+	if (currentTurning == 0):
+		particleAmount = 0;
+		
+	var turningLeft : bool = currentTurning >= 0.0;
+	var color : Color = getGroundType().lerp(Color.WHITE, 0.25);
+	
+	setParticleEmitter($TireSmoke_Left1, turningLeft, particleAmount * 0.5, color);
+	setParticleEmitter($TireSmoke_Left2, !turningLeft, particleAmount, color);
+	setParticleEmitter($TireSmoke_Right1, !turningLeft, particleAmount * 0.5, color);
+	setParticleEmitter($TireSmoke_Right2, turningLeft, particleAmount, color);
+	
+func setParticleEmitter(emitter : ParticleEmitter, active : bool, rate : float, color : Color):
+	if (active && rate <= 0.0): active = false;
+	emitter.active = active;
+	emitter.emissionsPerSecond = rate;
+	emitter.color = color;
+	
 func handleMoveAndSlide():
 	var forwardMotion : Vector3 = Vector3(-sin(currentAngle), 0, -cos(currentAngle)) * currentVelocity;
 	velocity = forwardMotion;
@@ -71,12 +88,6 @@ func handleMoveAndSlide():
 ###################################################################################
 
 @export var checkpointParent : Node3D;
-
-func initializeCheckpoints():
-	if (!checkpointParent): return;
-	
-	for checkpoint : Area3D in checkpointParent.get_children():
-		checkpoint.body_entered.connect(onCheckpointEnter);
 
 var currentCheckpoint : int = 0;
 func getNextCheckpoint():
@@ -119,3 +130,5 @@ func getGroundType():
 		return null;
 		
 	return trackSprite.texture.get_image().get_pixel(pixelLocation.x, pixelLocation.z);
+
+###################################################################################

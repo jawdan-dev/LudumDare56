@@ -5,7 +5,7 @@ var mainCamera : Camera3D;
 func _ready():
 	mainCamera = get_viewport().get_camera_3d();
 
-func _process(delta):
+func _process(_delta):
 	var rotationTo : float = rad_to_deg(getAngleChange(global_rotation.y, mainCamera.global_rotation.y));
 	
 	var flipped : bool = false;
@@ -22,9 +22,9 @@ func _process(delta):
 	frame = frameTarget;
 
 const angleThresholds : Array[float] = [ 25, 50, 85, 150 ];
-func getTurnFrame(rotation):
+func getTurnFrame(frameRotation):
 	for index : int in range(0, angleThresholds.size()):
-		if (rotation < angleThresholds[index]):
+		if (frameRotation < angleThresholds[index]):
 			return index;
 	return angleThresholds.size();
 	
