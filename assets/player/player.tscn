@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyt583hcsrcd6"]
+[gd_scene load_steps=4 format=3 uid="uid://cyt583hcsrcd6"]
 
 [ext_resource type="PackedScene" uid="uid://doq372oriag6c" path="res://assets/kart/kart.tscn" id="1_26la4"]
 [ext_resource type="Script" path="res://assets/player/player.gd" id="2_twugv"]
+[ext_resource type="Theme" uid="uid://cem70aixclxe2" path="res://assets/UI/Theme.tres" id="3_ebf6a"]
 
 [node name="Player" instance=ExtResource("1_26la4")]
 script = ExtResource("2_twugv")
@@ -18,3 +19,16 @@ max_distance = 0.5
 
 [node name="Listener" type="AudioListener3D" parent="." index="8"]
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
+
+[node name="Label" type="Label" parent="CanvasLayer" index="0"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("3_ebf6a")
+theme_override_font_sizes/font_size = 120
+text = "ITEM: Homing Missile"
+horizontal_alignment = 1
+vertical_alignment = 1

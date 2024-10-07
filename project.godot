@@ -19,6 +19,10 @@ config/icon="res://assets/tracks/track.png"
 
 CharacterChoice="*res://assets/characters/characterChoice.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [importer_defaults]
 
 texture={

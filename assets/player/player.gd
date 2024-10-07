@@ -22,3 +22,7 @@ func _process(_delta):
 	if (get_parent().get_child_count() == 1):
 		get_tree().change_scene_to_file("res://scenes/characterSelect.tscn");
 	 
+	match (itemType):
+		0: $CanvasLayer/Label.text = "";
+		1: $CanvasLayer/Label.text = "ITEM: Basic Missile";
+		2: $CanvasLayer/Label.text = "ITEM: Homing Missile";
