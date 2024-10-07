@@ -12,3 +12,8 @@ func _process(_delta):
 	else:
 		$Sprite.frame = 0;
 		$Sprite.flip_h = false;
+	
+func _physics_process(_delta):
+	super(_delta)
+	$Engine.pitch_scale = 1 + abs(currentVelocity)/10
+		

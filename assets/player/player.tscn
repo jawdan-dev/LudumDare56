@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyt583hcsrcd6"]
+[gd_scene load_steps=5 format=3 uid="uid://cyt583hcsrcd6"]
 
 [ext_resource type="Texture2D" uid="uid://fv8ahqbj7hny" path="res://assets/player/player.png" id="1_7grdt"]
 [ext_resource type="PackedScene" uid="uid://doq372oriag6c" path="res://assets/kart/kart.tscn" id="1_26la4"]
 [ext_resource type="Script" path="res://assets/player/player.gd" id="2_twugv"]
+[ext_resource type="AudioStream" uid="uid://brgbpd1h2sgob" path="res://assets/player/engineLoop.ogg" id="4_ltnth"]
 
 [node name="Player" instance=ExtResource("1_26la4")]
 script = ExtResource("2_twugv")
@@ -14,3 +15,9 @@ billboard = 2
 texture_filter = 0
 texture = ExtResource("1_7grdt")
 hframes = 5
+
+[node name="Engine" type="AudioStreamPlayer3D" parent="." index="6"]
+stream = ExtResource("4_ltnth")
+volume_db = -35.0
+autoplay = true
+doppler_tracking = 2
