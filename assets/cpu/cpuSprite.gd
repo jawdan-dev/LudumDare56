@@ -21,7 +21,7 @@ func _process(_delta):
 	
 	frame = frameTarget;
 
-const angleThresholds : Array[float] = [ 25, 50, 85, 150 ];
+const angleThresholds : Array[float] = [ 15, 50, 85, 150 ];
 func getTurnFrame(frameRotation):
 	for index : int in range(0, angleThresholds.size()):
 		if (frameRotation < angleThresholds[index]):

@@ -132,3 +132,18 @@ func getGroundType():
 	return trackSprite.texture.get_image().get_pixel(pixelLocation.x, pixelLocation.z);
 
 ###################################################################################
+
+@export var maxHealth : float = 100.0;
+@onready var currentHealth : float = maxHealth;
+
+@export var lightDamage : float = 9.0;
+@export var mediumDamage : float = 22.0;
+@export var heavyDamage : float = 22.0;
+
+func takeDamage(damage : float):
+	currentHealth -= damage;
+	if (currentHealth <= 0.0):
+		queue_free();
+		return;
+	
+	$HealthBar.frame = (currentHealth / maxHealth) * $HealthBar.hframes;

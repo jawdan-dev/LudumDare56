@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b463riewpntou"]
+
+[ext_resource type="Script" path="res://assets/projectile/projectile.gd" id="1_4uinh"]
+[ext_resource type="Script" path="res://assets/cpu/cpuSprite.gd" id="1_7bhxi"]
+[ext_resource type="Texture2D" uid="uid://y816j56ctayo" path="res://assets/projectile/textures/fireProjectile.png" id="1_xanxq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3p5yo"]
+radius = 0.063
+
+[node name="Projectile" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_4uinh")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+pixel_size = 0.005
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_xanxq")
+hframes = 5
+script = ExtResource("1_7bhxi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("SphereShape3D_3p5yo")
+
+[connection signal="body_entered" from="." to="." method="onBodyHit"]

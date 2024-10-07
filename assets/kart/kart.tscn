@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://doq372oriag6c"]
+[gd_scene load_steps=8 format=3 uid="uid://doq372oriag6c"]
 
 [ext_resource type="Script" path="res://assets/kart/kart.gd" id="1_2ex7j"]
 [ext_resource type="PackedScene" uid="uid://w1d37xtdvraw" path="res://assets/particle/particleEmitter.tscn" id="2_8s5px"]
 [ext_resource type="Texture2D" uid="uid://cnnk1n8uhkf37" path="res://assets/particle/textures/tireSmoke.png" id="3_imu6m"]
+[ext_resource type="Texture2D" uid="uid://ctn08m7nc45ux" path="res://assets/kart/health.png" id="4_xck3h"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oikaq"]
 radius = 0.125
@@ -64,3 +65,11 @@ maxLifetime = 0.2
 velocity = Vector3(0, 0.1, 0)
 rotationCurve = SubResource("Curve_guw6c")
 scaleCurve = SubResource("Curve_t8rxw")
+
+[node name="HealthBar" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45246, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_xck3h")
+hframes = 13
+frame = 12
