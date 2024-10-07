@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhs4g00gvid6r"]
+
+[ext_resource type="Texture2D" uid="uid://voih42apm3vg" path="res://assets/kart/explosion.png" id="1_opjuc"]
+[ext_resource type="Script" path="res://assets/kart/kartDeath.gd" id="2_acgyq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h1po"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(0, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjdge"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(24, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87qfx"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(48, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfwmu"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(72, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ipx3"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(96, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrnya"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(120, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxueh"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(144, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j50om"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(168, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhrx0"]
+atlas = ExtResource("1_opjuc")
+region = Rect2(192, 0, 24, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4oab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h1po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjdge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87qfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfwmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ipx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrnya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxueh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j50om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhrx0")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 20.0
+}]
+
+[node name="KartDeath" type="AnimatedSprite3D"]
+pixel_size = 0.0075
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_x4oab")
+animation = &"explosion"
+autoplay = "explosion"
+script = ExtResource("2_acgyq")
+
+[connection signal="animation_finished" from="." to="." method="animationFinished"]

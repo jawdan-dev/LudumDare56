@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm54qv4g40fkt"]
+
+[ext_resource type="Texture2D" uid="uid://bauo7tpq7cg0f" path="res://assets/pickup/pickup.png" id="1_7jpnn"]
+[ext_resource type="Script" path="res://assets/pickup/pickup.gd" id="1_brm5g"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r0b4r"]
+radius = 0.116849
+
+[node name="Pickup" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_brm5g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134602, 0)
+shape = SubResource("SphereShape3D_r0b4r")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138725, 0)
+pixel_size = 0.0075
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_7jpnn")
+
+[connection signal="body_entered" from="." to="." method="onBodyEntered"]

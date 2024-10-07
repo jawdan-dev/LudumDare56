@@ -13,10 +13,13 @@ var currentVelocity : float = 0.0;
 
 func getAccelerationInput(): return 0;
 func getTurningInput(): return 0;
+func getUseItemInput(): return 0;
 
 func _physics_process(delta): 
 	handleAcceleration(delta);
 	handleTurning(delta);
+	#
+	if (getUseItemInput()): useItem();
 	#
 	handleSprite();
 	handleParticles();
@@ -137,13 +140,72 @@ func getGroundType():
 @onready var currentHealth : float = maxHealth;
 
 @export var lightDamage : float = 9.0;
-@export var mediumDamage : float = 22.0;
 @export var heavyDamage : float = 22.0;
 
+@export var itemType : int = 0;
+
+func pickupItem() -> bool:
+	if (itemType != 0): return false;
+	
+	itemType = [2, 2].pick_random();
+	return true;
+
+const projectilePrefab : PackedScene = preload("res://assets/projectile/projectile.tscn");
+func useItem(): 
+	match (itemType):
+		1: 
+			var projectile : Node3D = projectilePrefab.instantiate();
+			
+			projectile.damage = lightDamage;
+			projectile.lifeTime = 0.5;
+			projectile.rotation.y = currentAngle;
+			
+			get_tree().root.add_child(projectile);
+			projectile.global_position = global_position;
+		2: 
+			var projectile : Node3D = projectilePrefab.instantiate();
+			
+			projectile.target = getKartInFront();
+			projectile.damage = heavyDamage;
+			projectile.rotation.x = TAU * 0.25;
+			
+			get_tree().root.add_child(projectile);
+			projectile.global_position = global_position;
+	itemType = 0;
+	
+func getKartInFront(): 
+	var karts : Array[Node] = get_parent().get_children();
+	karts.erase(self);
+	
+	if (karts.size() == 0): return null;
+	
+	var bestScore : float = -INF;
+	var bestKart : Kart = null;
+	
+	var forward : Vector3 = Vector3(-sin(currentAngle), 0, - cos(currentAngle));
+	for kart : Kart in karts:
+		if (!kart): continue;
+		
+		var to : Vector3 = kart.global_position - global_position;
+		var score : float = forward.dot(to.normalized()) / to.length_squared();
+		
+		if (bestScore < score && score > 0):
+			bestScore = score;
+			bestKart = kart;
+	
+	return bestKart;
+	
 func takeDamage(damage : float):
 	currentHealth -= damage;
 	if (currentHealth <= 0.0):
-		queue_free();
+		dieNStuff();
 		return;
 	
 	$HealthBar.frame = (currentHealth / maxHealth) * $HealthBar.hframes;
+
+func dieNStuff():
+	var kartDeath : Node3D = load("res://assets/kart/KartDeath.tscn").instantiate();
+	get_tree().root.add_child(kartDeath);
+	kartDeath.global_position = global_position + Vector3(0, 0.1, 0);
+	queue_free();
+	
