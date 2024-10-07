@@ -1,13 +1,22 @@
 extends Kart
 
+var itemCooldown : float = 0.0;
+
 func getAccelerationInput(): return 1;
-func getUseItemInput(): return 1;
+func getUseItemInput(): 
+	if (itemCooldown > 0.0): return 0;
+	itemCooldown = 2.0;
+	return 1;
 
 var lastCheckpoint : int = 0;
 var targetPoint : Vector3 = Vector3.ZERO;
 
 func _ready():
 	$Sprite.texture = CharacterChoice.takeCPUSprite();
+
+func _process(delta):
+	if (itemCooldown > 0 && itemType != 0):
+		itemCooldown -= delta;
 	
 func onDeath(sender : Kart):
 	if (sender.name == "Player"):
