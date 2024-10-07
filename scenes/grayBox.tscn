@@ -314,7 +314,6 @@ hframes = 2
 script = ExtResource("3_2s0e2")
 
 [node name="Player" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("1_qyo8s")]
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
@@ -323,42 +322,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.305793, 0.606846)
 
 [node name="CPU" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9805, 0, 0)
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
 [node name="CPU2" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35044, 0, 0)
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
 [node name="CPU3" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80639, 0, 0)
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
 [node name="CPU4" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35044, 0, 0.238796)
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
 [node name="CPU5" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80639, 0, 0.238796)
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
 [node name="CPU6" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35044, 0, 0.523198)
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")
 
 [node name="CPU7" parent="." node_paths=PackedStringArray("checkpointParent", "trackSprite") instance=ExtResource("5_6idas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80639, 0, 0.523198)
-collision_layer = 1
 checkpointParent = NodePath("../Checkpoints")
 trackSprite = NodePath("../Ground")

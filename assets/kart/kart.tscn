@@ -17,6 +17,8 @@ point_count = 2
 metadata/_snap_enabled = true
 
 [node name="Kart" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_2ex7j")
 
 [node name="Collider" type="CollisionShape3D" parent="."]

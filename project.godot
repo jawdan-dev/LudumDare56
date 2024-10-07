@@ -44,6 +44,11 @@ player_right={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="Karts"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
