@@ -8,6 +8,10 @@ var targetPoint : Vector3 = Vector3.ZERO;
 
 func _ready():
 	$Sprite.texture = CharacterChoice.takeCPUSprite();
+	
+func onDeath(sender : Kart):
+	if (sender.name == "Player"):
+		CharacterChoice.unlockChoice(CharacterChoice.getSpriteIndex($Sprite.texture));
 
 func getTurningInput(): 
 	if (!checkpointParent): return 0;

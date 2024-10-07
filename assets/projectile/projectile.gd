@@ -6,6 +6,7 @@ extends Area3D
 @export var rotationSpeed : float = 0.2;
 @export var damage : float = 1.0;
 @export var lifeTime : float = 60.0;
+@export var sender : Kart;
 
 @onready var forward : Vector3 = Vector3(
 	cos(global_rotation.x) * -sin(global_rotation.y), 
@@ -37,4 +38,4 @@ func onBodyHit(body):
 	
 	if (kart == target || !is_instance_valid(target)):
 		lifeTime = 0;
-		kart.takeDamage(damage);
+		kart.takeDamage(damage, sender);

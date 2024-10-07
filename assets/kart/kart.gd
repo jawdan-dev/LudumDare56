@@ -141,7 +141,7 @@ func getGroundType():
 @export var maxHealth : float = 100.0;
 @onready var currentHealth : float = maxHealth;
 
-@export var lightDamage : float = 9.0;
+@export var lightDamage : float = 18.0;
 @export var heavyDamage : float = 22.0;
 
 @export var itemType : int = 0;
@@ -163,6 +163,7 @@ func useItem():
 			projectile.speed = 10;
 			projectile.lifeTime = 0.5;
 			projectile.rotation.y = currentAngle;
+			projectile.sender = self;
 			
 			get_tree().root.add_child(projectile);
 			projectile.global_position = global_position;
@@ -173,6 +174,7 @@ func useItem():
 			projectile.ignoreTarget = self;
 			projectile.damage = heavyDamage;
 			projectile.rotation.x = TAU * 0.25;
+			projectile.sender = self;
 			
 			get_tree().root.add_child(projectile);
 			projectile.global_position = global_position;
@@ -200,17 +202,19 @@ func getKartInFront():
 	
 	return bestKart;
 	
-func takeDamage(damage : float):
+func takeDamage(damage : float, sender : Kart):
 	currentHealth -= damage;
 	if (currentHealth <= 0.0):
-		dieNStuff();
+		dieNStuff(sender);
 		return;
 	
 	$HealthBar.frame = (currentHealth / maxHealth) * $HealthBar.hframes;
 
-func dieNStuff():
+func onDeath(sender : Kart): pass;
+func dieNStuff(sender : Kart):
 	var kartDeath : Node3D = load("res://assets/kart/KartDeath.tscn").instantiate();
 	get_tree().root.add_child(kartDeath);
 	kartDeath.global_position = global_position + Vector3(0, 0.1, 0);
+	onDeath(sender);
 	queue_free();
 	

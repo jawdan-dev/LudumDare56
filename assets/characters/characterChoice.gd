@@ -30,7 +30,21 @@ func takePlayerSprite() -> Texture2D:
 
 func takeCPUSprite() -> Texture2D:
 	var spriteIndex : int = availableSprites.pick_random();
-	if (spriteIndex == playerChoice): 
-		return takeCPUSprite();
+	if (spriteIndex == playerChoice): return takeCPUSprite();
 	availableSprites.erase(spriteIndex);
 	return allSprites[spriteIndex];
+	
+	
+func unlockChoice(index : int):
+	if (index == -1): return;
+	
+	for unlocked : int in unlockedCharacters:
+		if (unlocked == index):
+			return;
+	unlockedCharacters.append(index);
+	
+func getSpriteIndex(sprite : Texture2D) -> int:
+	for spriteIndex : int in range(0, allSprites.size()):
+		if (allSprites[spriteIndex] == sprite):
+			return spriteIndex;
+	return -1;
